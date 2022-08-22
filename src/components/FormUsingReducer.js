@@ -35,18 +35,22 @@ const FormUsingReducer = () => {
         id="name"
         onChange={(e) => dispatch({ type: "NAME", value: e.target.value })}
       />
+      {formState?.errors?.name && <div>{formState.errors.name}</div>}
       <label for="email">Email</label>
       <input
         type="email"
         id="email"
         onChange={(e) => dispatch({ type: "EMAIL", value: e.target.value })}
       />
+      {formState?.errors?.email && <div>{formState.errors.email}</div>}
+
       <label for="password">Password</label>
       <input
         type="password"
         id="password"
         onChange={(e) => dispatch({ type: "PASSWORD", value: e.target.value })}
       />
+      {formState?.errors?.password && <div>{formState.errors.password}</div>}
       <label for="consent">Consent</label>
       <input
         type="checkbox"
