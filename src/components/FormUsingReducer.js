@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useEffect, useReducer } from "react";
 import { signUpFormReducer } from "../reducers/signUpFormReducer";
 import { signUpFormValidation } from "../utils/signupformvalidation";
 const initialFormState = {
@@ -17,10 +17,14 @@ const initialFormState = {
 const FormUsingReducer = () => {
   const [formState, dispatch] = useReducer(signUpFormReducer, initialFormState);
 
+  useEffect(() => {
+    console.log(formState.errors);
+  }, [formState.errors]);
+
   function handleFormSubmit(e) {
     e.preventDefault();
-    signUpFormValidation(formState.input);
-    console.log(formState);
+    const error = signUpFormValidation(formState.input);
+    dispatch({ type: "ERROR", value: error });
   }
 
   return (

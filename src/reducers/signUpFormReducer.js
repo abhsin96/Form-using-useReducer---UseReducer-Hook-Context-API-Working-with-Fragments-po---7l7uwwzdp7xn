@@ -1,24 +1,19 @@
 const signUpFormReducer = (state, action) => {
   switch (action.type) {
     case "NAME": {
-      input: {
-        name: action.value;
-      }
+      return { ...state, input: { ...state.input, name: action.value } };
     }
     case "EMAIL": {
-      input: {
-        email: action.value;
-      }
+      return { ...state, input: { ...state.input, email: action.value } };
     }
     case "PASSWORD": {
-      input: {
-        password: action.value;
-      }
+      return { ...state, input: { ...state.input, password: action.value } };
     }
     case "CONSENT": {
-      input: {
-        consent: action.value;
-      }
+      return { ...state, input: { ...state.input, consent: action.value } };
+    }
+    case "ERROR": {
+      return { ...state, errors: action.value };
     }
     default: {
       return state;
