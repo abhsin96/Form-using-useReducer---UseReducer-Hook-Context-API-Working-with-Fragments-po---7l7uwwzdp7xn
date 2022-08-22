@@ -25,6 +25,8 @@ const FormUsingReducer = () => {
       <input type="email" id="email" required />
       <label for="password">Password</label>
       <input type="password" id="password" required />
+      <label for="consent">Consent</label>
+      <input type="checkbox" id="consent" />
       <button type="submit">Submit</button>
     </form>
   );
