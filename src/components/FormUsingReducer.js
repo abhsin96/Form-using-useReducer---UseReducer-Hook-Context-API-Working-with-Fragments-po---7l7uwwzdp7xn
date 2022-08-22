@@ -19,7 +19,7 @@ const FormUsingReducer = () => {
 
   function handleFormSubmit(e) {
     e.preventDefault();
-    console.log(signUpFormValidation(formState.input));
+    signUpFormValidation(formState.input);
     console.log(formState);
   }
 
